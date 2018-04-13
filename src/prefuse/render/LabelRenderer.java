@@ -6,9 +6,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import javafx.geometry.Bounds;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
@@ -34,6 +39,8 @@ public class LabelRenderer extends AbstractShapeRenderer {
     Font m_font;
     Text m_text;
     
+    VBox vBox;
+    
     protected String m_labelName = "label";
     protected String m_imageName = null;
     
@@ -42,7 +49,7 @@ public class LabelRenderer extends AbstractShapeRenderer {
     double shapeWidth;
     double shapeHeight;
     
-    protected int m_imageMargin = 8;
+    protected double m_imageMargin = 0.1;
     int k = 5;
 	
 	static {
@@ -66,12 +73,8 @@ public class LabelRenderer extends AbstractShapeRenderer {
     
     public void render(Display display, VisualItem item) {
     	computeDimension(item);
-//    	k = k + 30;
-//        imageView2 = new ImageView(img);
-//        imageView2.setX(300+k); 
-//        imageView2.setY(300+k);
     	display.getChildren().addAll(imageView);
-    	//display.getChildren().addAll(m_text);
+    	display.getChildren().addAll(m_text);
     }
 	
     protected String getText(VisualItem item) {
@@ -124,32 +127,34 @@ public class LabelRenderer extends AbstractShapeRenderer {
         //保持原图片的大小比例
         imageView.setPreserveRatio(true);
 
-     
-//        ty = iy + ih + m_imageMargin;
-//        		
-//        m_font = item.getFont();
-//
-//        //根据配置条件，放大缩小字体
-//        m_font = FontLib.getFont(m_font.getName(), m_font.getStyle(),
-//                size*m_font.getSize());
-//     
-//		String text = getText(item);
-//        
-//        m_text = new Text();
-//        m_text.setFont(m_font);
-//        m_text.setText(text);
-//        tw = m_text.getBoundsInLocal().getWidth();
-//        th = m_text.getBoundsInLocal().getHeight();
-//        // 文字居中处理
-//        tx = ix + iw/2 - tw/2;
-//        
-//        m_text.setX(tx);
-//        m_text.setY(ty);
+             		
+        m_font = item.getFont();
 
-        shapeX = (iw>tw) ? ix : tx;
-        shapeY = iy;
-        shapeWidth = (iw>tw) ? iw : tw;
-        shapeHeight = ih + m_imageMargin + th;
+        //根据配置条件，放大缩小字体
+        m_font = FontLib.getFont(m_font.getName(), m_font.getStyle(),
+                size*m_font.getSize());
+     
+		String text = getText(item);
+        
+        m_text = new Text();
+        m_text.setFont(m_font);
+        m_text.setText(text);
+        tw = m_text.getBoundsInLocal().getWidth();
+        th = m_text.getBoundsInLocal().getHeight();
+        
+        // 文字居中处理
+        tx = ix + iw/2 - tw/2;
+        
+        ty = iy + ih + m_imageMargin + th;
+        
+        m_text.setX(tx);
+        m_text.setY(ty);
+
+        shapeX = (iw>tw) ? ix - 4 : tx - 4 ;
+        shapeY = iy-4;
+        shapeWidth = (iw>tw) ? iw + 8 : tw + 8;
+        //shapeHeight = ih + m_imageMargin + th;
+        shapeHeight = ih + m_imageMargin + th + 8;
 		
 	}
 	

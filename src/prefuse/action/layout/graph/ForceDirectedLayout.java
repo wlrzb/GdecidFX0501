@@ -351,6 +351,7 @@ public class ForceDirectedLayout extends Layout {
         float startY = (referrer == null ? 0f : (float)referrer.getY());
         startX = Float.isNaN(startX) ? 0f : startX;
         startY = Float.isNaN(startY) ? 0f : startY;
+        
        
         Iterator iter = m_vis.visibleItems(m_nodeGroup);
         while ( iter.hasNext() ) {

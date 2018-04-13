@@ -48,8 +48,9 @@ public class one2 extends Application {
 		vis.setRendererFactory(new DefaultRendererFactory(r));
 		
 		ActionList layout = new ActionList(Activity.INFINITY);
+		//ActionList layout = new ActionList();
         //layout.add(new CircleLayout("graph.nodes"));
-		layout.add(new ForceDirectedLayout("graph", true));
+		layout.add(new ForceDirectedLayout("graph"));
 		layout.add(new RepaintAction());
         vis.putAction("layout", layout);
         vis.run("layout");

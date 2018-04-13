@@ -61,6 +61,7 @@ public class Display extends Pane{
 	
     public Display(Visualization visualization, Predicate predicate) {
     	this.setPrefSize(1440, 900);
+    	this.setStyle("-fx-background-color:white");
 		Button btn = new Button("按钮");
 		this.getChildren().addAll(btn);
     	setVisualization(visualization);
@@ -100,6 +101,8 @@ public class Display extends Pane{
     
     public void paintDisplay() {
     	synchronized ( m_vis ) {
+    	//	this.setTranslateX(1440/2);
+    	//	this.setTranslateY(900/2);
     		long end = System.currentTimeMillis();      //结束时间    
     		System.out.println("主线运行时间："+end+"毫秒");
     		this.getChildren().clear();
@@ -120,9 +123,9 @@ public class Display extends Pane{
     		}
     			
 
-    		try{
-    			m_vis.wait();
-    		} catch (Exception e) {}
+//    		try{
+//    			m_vis.wait();
+//    		} catch (Exception e) {}
     
     	}
 

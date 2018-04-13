@@ -48,19 +48,19 @@ public class EdgeRenderer extends AbstractShapeRenderer {
         start = m_tmpPoints[0];
         end   = m_tmpPoints[1];
         
-//        VisualItem src = e.getSourceItem(); 
-//        Object[] objectsrc = GraphicsLib.intersectLineRectangle(start, end,
-//                src.getBounds(), m_isctPoints);
-//        int i = (int)objectsrc[0];
-//        m_isctPoints = (Point2D[])objectsrc[1];
-//        if ( i > 0 ) start = m_isctPoints[0];
+        VisualItem src = e.getSourceItem(); 
+        Object[] objectsrc = GraphicsLib.intersectLineRectangle(start, end,
+                src.getBounds(), m_isctPoints);
+        int i = (int)objectsrc[0];
+        m_isctPoints = (Point2D[])objectsrc[1];
+        if ( i > 0 ) start = m_isctPoints[0];
 //        
-//        VisualItem dest = e.getTargetItem(); 
-//        Object[] objectdest = GraphicsLib.intersectLineRectangle(start, end,
-//                dest.getBounds(), m_isctPoints);
-//        int j = (int)objectdest[0];
-//        m_isctPoints = (Point2D[])objectdest[1];
-//        if ( j > 0 ) end = m_isctPoints[0];
+        VisualItem dest = e.getTargetItem(); 
+        Object[] objectdest = GraphicsLib.intersectLineRectangle(start, end,
+                dest.getBounds(), m_isctPoints);
+        int j = (int)objectdest[0];
+        m_isctPoints = (Point2D[])objectdest[1];
+        if ( j > 0 ) end = m_isctPoints[0];
 //        
         double n1x = start.getX();
         double n1y = start.getY();
