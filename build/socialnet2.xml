@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  An excerpt of an egocentric social network  -->
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<graph edgedefault="undirected">
+ 
+<!-- data schema -->
+<key id="name" for="node" attr.name="name" attr.type="string"/>
+<key id="gender" for="node" attr.name="gender" attr.type="string"/>
+  
+<!-- nodes -->  
+<node id="1">
+ <data key="name">Jeff</data>
+ <data key="gender">M</data>
+ </node>
+<node id="2">
+ <data key="name">Ed</data>
+ <data key="gender">M</data>
+</node>
+<node id="3">
+ <data key="name">Christiaan</data>
+ <data key="gender">M</data>
+</node>
+<node id="4">
+ <data key="name">Emily</data>
+ <data key="gender">F</data>
+</node>
+<node id="5">
+ <data key="name">Adam</data>
+ <data key="gender">M</data>
+</node>
+
+
+<!-- edges -->
+<edge source="1" target="2"></edge>
+<edge source="1" target="3"></edge>
+<edge source="1" target="4"></edge>
+<edge source="1" target="5"></edge>
+
+
+</graph>
+</graphml>
