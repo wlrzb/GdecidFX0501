@@ -7,5 +7,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/lucene-1.4.3.jar"/>
 	<classpathentry kind="var" path="JUNIT_HOME/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Java/project/jar/poi-3.15.jar"/>
+	<classpathentry kind="lib" path="C:/Java/project/jar/poi-ooxml-3.15.jar"/>
+	<classpathentry kind="lib" path="C:/Java/project/jar/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Java/project/jar/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Java/project/jar/poi-ooxml-schemas-3.17.jar"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>

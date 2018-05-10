@@ -1,10 +1,11 @@
 package prefuse.action.layout.graph;
 
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
+import javafx.geometry.Point2D;
+import javafx.geometry.Rectangle2D;
 import java.util.Arrays;
 
 import prefuse.Constants;
+import prefuse.Display;
 import prefuse.Display2;
 import prefuse.data.Graph;
 import prefuse.data.Schema;
@@ -185,7 +186,7 @@ public class NodeLinkTreeLayout extends TreeLayout {
         
         m_tmpa.setLocation(0,0);
         if ( m_vis != null ) {
-            Display2 d = m_vis.getDisplay(0);
+            Display d = m_vis.getDisplay(0);
             Rectangle2D b = this.getLayoutBounds();
             switch ( m_orientation ) {
             case Constants.ORIENT_LEFT_RIGHT:

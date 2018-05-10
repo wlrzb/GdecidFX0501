@@ -42,11 +42,9 @@ public class Display extends Pane{
 	
 	int k =0;
 	
-	
-	
 	public Display() {
-		Button btn = new Button("°´Å¥");
-		this.getChildren().addAll(btn);
+    	this.setPrefSize(1440, 900);
+    	this.setStyle("-fx-background-color:white");
 
 	}
 	
@@ -62,11 +60,15 @@ public class Display extends Pane{
     public Display(Visualization visualization, Predicate predicate) {
     	this.setPrefSize(1440, 900);
     	this.setStyle("-fx-background-color:white");
-		Button btn = new Button("°´Å¥");
-		this.getChildren().addAll(btn);
     	setVisualization(visualization);
     	setPredicate(predicate);
     	//animate();
+    }
+    
+    public void AddVis(Visualization visualization) {
+    	setVisualization(visualization);  
+    	Predicate predicate1 = (Predicate)null;
+    	setPredicate(predicate1);
     }
     
     public void animate() {

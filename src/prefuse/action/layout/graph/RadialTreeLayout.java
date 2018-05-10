@@ -1,9 +1,9 @@
 package prefuse.action.layout.graph;
 
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.util.Iterator;
 
+import javafx.geometry.Point2D;
+import javafx.geometry.Rectangle2D;
 import prefuse.data.Graph;
 import prefuse.data.Node;
 import prefuse.data.Schema;
